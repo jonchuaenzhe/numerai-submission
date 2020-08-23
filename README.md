@@ -1,1 +1,2 @@
-# numerai_tournament
+# Numerai Tournament
+
