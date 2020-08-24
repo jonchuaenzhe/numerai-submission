@@ -10,4 +10,4 @@ This repo has 4 notebooks:
 3. hyperparameter_tuning.ipynb - tuning the hyperparameters of different models being used in the final model ensemble
 4. stacked_model_ensemble.ipynb - pipeline to stack multiple models together and train a final meta-model to improve the predictions as compared to just a single model.
 
-We managed to achieve a validation score (by era) of [X] with standard deviation [Y], as compared to that of the baseline model with score of [X] and standard deviation of [Y]
+We managed to achieve a validation score (by era) of 0.0334 with standard deviation 0.0276, as compared to that of the baseline model (Slow XGB Model, which is the baseline suggested in Numerai docs) with score of 0.0284 and standard deviation of 0.0306
