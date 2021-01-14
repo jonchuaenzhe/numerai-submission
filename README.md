@@ -11,3 +11,8 @@ This repo has 4 notebooks:
 4. stacked_model_ensemble.ipynb - pipeline to stack multiple models together and train a final meta-model to improve the predictions as compared to just a single model.
 
 We managed to achieve a validation score (by era) of 0.0302 with standard deviation 0.0307, as compared to that of the baseline model (Slow XGB Model, which is the baseline suggested in Numerai docs) with score of 0.0284 and standard deviation of 0.0306
+
+# Live Test Results
+These were the correlation scores of the predictions to the ground truth over 18 weeks of live tests. They stacked up well against the rest of the competitors from across the world
+
+![Scores](Correlation_Scores.png)
