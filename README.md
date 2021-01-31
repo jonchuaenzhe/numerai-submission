@@ -15,4 +15,4 @@ We managed to achieve a validation score (by era) of 0.0302 with standard deviat
 # Live Test Results
 These were the correlation scores of the predictions to the ground truth over 18 weeks of live tests. They stacked up well against the rest of the competitors from across the world
 
-![Scores](Correlation_Scores.png)
+![Scores](Numerai Score.png)
