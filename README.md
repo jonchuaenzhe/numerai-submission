@@ -63,6 +63,6 @@ Standard Deviation across Eras: 0.0307
 
 Below shows the performance of the model on live data at the model's peak performance in June 2021 to Sep 2021. The ranking dropped off in Oct as I stopped submitting predictions.
 
-![Numerai Overview](images/numerai_overview.pdf)
+![Numerai Overview](images/numerai_overview.png)
 
 Refer to the pdf file "Numerai Rounds.pdf" to view the performance of the model at each round over the 46 rounds.
