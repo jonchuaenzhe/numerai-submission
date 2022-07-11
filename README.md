@@ -38,19 +38,31 @@ These scores were decent, and as of Nov 2021, a validation correlation of 0. 026
 
 ## Feature Engineering
 
-Refer to the notebook "feature_engineering.ipynb" for more details.
+Refer to the notebook "feature_engineering.ipynb" for more details on preparing the engineered features.
 
+Additional features were added to the 310 original features by performing dimensionality reduction on the datasets with PCA and Autoencoding (with an ANN). They essentially encapsulate the key information of the 310 features into a small number of features (less than 10). Experiments with the baseline model showed that adding these additional information to the original features increases the performance noticably.
 
+## Hyper-Parameter Tuning
 
+Refer to the notebook "hyperparameter_tuning.ipynb" for more details.
 
+The gradient boosted trees XGBoost and LightGBM each have more than 20 parameters that can be tuned, thus, hyper-parameter tuning was implemented on them using a Bayesian Optimisation Algorithm, which exponentially increases the speed of the hyper-parameter tuning. The best parameters obatined were as follows:
 
+![Final Params](images/final_params.png)
 
+## Stacked Model Ensemble
 
+Refer to the notebook "stacked_model_ensemble.ipynb" for more details.
 
-This repo has 4 notebooks:
-1. baseline_models.ipynb - initial default models suggested by Numerai to serve as a benchmark and as a model for iterating through different parameters
-2. feature_engineering.ipynb - creating additional features to add to the existing 310 features to improve inference
-3. hyperparameter_tuning.ipynb - tuning the hyperparameters of different models being used in the final model ensemble
-4. stacked_model_ensemble.ipynb - pipeline to stack multiple models together and train a final meta-model to improve the predictions as compared to just a single model.
+As different models can be better at prediction certain kinds of data in the larger dataset, fitting an additional meta-model on top of the ensemble of models to best combine the predictiond from each sub-model can improve performance. As shown in the figure above, 10 different models were ensembled together to form a larger Stacked Model, which brought the following performance, above the 98.3 percentile:
+```
+Mean Correlation Score: 0.0302
+Standard Deviation across Eras: 0.0307
+```
+## Live Results
 
-We managed to achieve a validation score (by era) of 0.0302 with standard deviation 0.0307, as compared to that of the baseline model (Slow XGB Model, which is the baseline suggested in Numerai docs) with score of 0.0284 and standard deviation of 0.0306
+Below shows the performance of the model on live data at the model's peak performance in June 2021 to Sep 2021. The ranking dropped off in Oct as I stopped submitting predictions.
+
+![Numerai Overview](images/numerai_overview.pdf)
+
+Refer to the pdf file "Numerai Rounds.pdf" to view the performance of the model at each round over the 46 rounds.
